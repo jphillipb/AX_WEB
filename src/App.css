@@ -6,6 +6,32 @@
   height: 40vmin;
   pointer-events: none;
 }
+.logo-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 70%);
+  transform: skewX(-20deg);
+  animation: lightSweep 3s infinite linear;
+}
+
+@keyframes lightSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
